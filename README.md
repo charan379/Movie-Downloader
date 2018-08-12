@@ -109,9 +109,10 @@ The only difference in both these type of results is the presence of picture
 quality. In both cases, the rating is out of 10 stars.
 
 At the prompt if you enter 0 then the next page is loaded (if present) and if
-you input a valid movie number, then the script either open the link in a new
-browser window or initiates a download depending on whether the "-d" option is
-specified or not.
+you input a valid movie number, then the script initiates download if the "-d"
+flag is specified else there's another yes/no confirmation to download the
+movie. If y/Y is entered then again download is initiated else the movie is
+openend in a new browser tab.
 
 All downloads happen in the directory where the script resides.
 

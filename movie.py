@@ -123,7 +123,11 @@ def search_movie(query, page):
     while True:
         temp = input("Enter number to watch the movie or 0 for next page ")
         if int(temp) < len(url_list) + 1 and int(temp) != 0:
-            fire_movie(url_list[int(temp) - 1])
+            download_flag = input("Do you want to download? [Y/N] ")
+            if download_flag[0].upper() == "Y":
+                fire_movie(url_list[int(temp) - 1], 1)
+            else:
+                fire_movie(url_list[int(temp) - 1], 0)
             quit()
         elif int(temp) == 0:
             for i in soup.find_all("span", attrs={"class": ""}):
@@ -138,7 +142,7 @@ def search_movie(query, page):
             quit()
 
 # Open browser to movie link.
-def fire_movie(url):
+def fire_movie(url, download_flag):
     print(args)
     os.system("reset")
     response = requests.get(url)
@@ -148,7 +152,7 @@ def fire_movie(url):
     ydl_link = []
     ydl_link.append(direct_link)
     print(ydl_link)
-    if args.d:
+    if args.d or download_flag:
         ydl_opts = {}
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             ydl.download(ydl_link)
@@ -220,7 +224,11 @@ while break_count < 5 and not args.s:
             url_list = get_curated_list(url + str(page_number))
             page_number += 1
         elif int(temp) < len(url_list) + 1:
-            fire_movie(url_list[int(temp) - 1])
+            download_flag = input("Do you want to download? [Y/N] ")
+            if download_flag[0].upper() == "Y":
+                fire_movie(url_list[int(temp) - 1], 1)
+            else:
+                fire_movie(url_list[int(temp) - 1], 0)
             break_count = 10
         else:
             break_count += 1
@@ -231,3 +239,5 @@ while break_count < 5 and not args.s:
 if break_count == 5:
     print("You've bored me with wrong choices")
     print("I give up. Try again later")
+
+quit()
