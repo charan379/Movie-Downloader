@@ -121,8 +121,11 @@ def search_movie(query, page):
         print(i.find("span", attrs={"class": "rating"}).text + "\n" + "*"*50)
         count += 1
     while True:
-        temp = input("Enter number to watch the movie or 0 for next page ")
-        if int(temp) < len(url_list) + 1 and int(temp) != 0:
+        temp = input("Enter number to watch the movie or 0 for next page or q to quit ")
+        if temp[0].upper() == "Q":
+            print("Thanks for using :)")
+            quit()
+        elif int(temp) < len(url_list) + 1 and int(temp) != 0:
             download_flag = input("Do you want to download? [Y/N] ")
             if download_flag[0].upper() == "Y":
                 fire_movie(url_list[int(temp) - 1], 1)
@@ -137,6 +140,9 @@ def search_movie(query, page):
                 quit()
             if int(page) < int(total_pages):
                 search_movie(query, page+1)
+        elif temp[0].upper() == "Q":
+            print("Thanks for using :)")
+            quit()
         else:
             print("Wrong choice")
             quit()
@@ -217,13 +223,16 @@ elif args.y:
 page_number = 2
 break_count = 1
 while break_count < 5 and not args.s:
-    temp = input("Enter a number to load that movie or 0 to load next page ")
+    temp = input("Enter a number to load that movie or 0 to load next page or q to quit ")
     try:
-        if temp == 0:
+        if temp[0].upper() == "Q":
+            print("Thanks for using :)")
+            quit()
+        elif int(temp) == 0:
             os.system('reset')
             url_list = get_curated_list(url + str(page_number))
             page_number += 1
-        elif int(temp) < len(url_list) + 1:
+        elif int(temp) < len(url_list) + 1 and int(temp) != 0:
             download_flag = input("Do you want to download? [Y/N] ")
             if download_flag[0].upper() == "Y":
                 fire_movie(url_list[int(temp) - 1], 1)
