@@ -49,7 +49,7 @@ curated.add_argument("-f", help="Featured Movies", action="store_true")
 curated.add_argument("-t", help="Top Rated Movies", action="store_true")
 curated.add_argument("-p", help="Popular/Most viewed Movies",
                      action="store_true")
-
+curated.add_argument("-m", help="OpenLoad movies list", action="store_true")
 args = parser.parse_args()
 
 num_true = 0
@@ -195,7 +195,12 @@ elif args.p:
     else:
         url = url + "/most-viewed/page/"
     url_list = get_curated_list(url + "1")
-
+elif args.m:
+    if url[-1] == "/":
+        url = url + "movies/page/"
+    else:
+        url = url + "/movies/page/"
+    url_list = get_curated_list(url + "1")
 elif args.s:
     search_movie(" ".join(args.s), 1)
 elif args.g:

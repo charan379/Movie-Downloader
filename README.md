@@ -52,7 +52,8 @@ optional arguments:
   -s [S [S ...]]  Search a movie
   -f              Featured Movies
   -t              Top Rated Movies
-  -p              Popular/Most viewed Movies
+  -p              Popular/Most viewed Movie
+  -m              OpenLoad movies list
 ```
 
 Using the script is pretty simple. Some examples are given.
