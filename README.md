@@ -18,7 +18,7 @@ interface.
 This script is supposed to work on all UNIX based systems (GNU-Linux, Mac...)
 I haven't tested this on Windows.
 
-Python3 is only supported. Not tested on Python 2. The dependencies of this
+Python 2 and Python3 are supported. The dependencies of this
 script are
 
 * [requests](https://pypi.org/project/requests/)
