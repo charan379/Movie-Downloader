@@ -18,7 +18,7 @@ interface.
 This script is supposed to work on all UNIX based systems (GNU-Linux, Mac...)
 I haven't tested this on Windows.
 
-Python3 is only supported. Not tested on python2. The dependencies of this
+Python3 is only supported. Not tested on Python 2. The dependencies of this
 script are
 
 * [requests](https://pypi.org/project/requests/)
@@ -27,6 +27,10 @@ script are
 
 * [youtube-dl](https://pypi.org/project/youtube_dl/)
   * This requires PhantomJS. See [here](http://phantomjs.org/download.html)
+
+To install dependencies :
+Python2 : pip install -r requirements.txt
+Python3 : pip3 install -r requirements.txt
 
 Inbuilt libraries used. Make sure these are importable.
 
