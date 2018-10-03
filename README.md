@@ -1,7 +1,7 @@
 # Movie-Downloader
 
 ---
-Version : 1.0
+Version : 1.1
 
 Author : Gadila Shashank Reddy
 
@@ -91,19 +91,20 @@ Enter number to watch the movie or 0 for next page
 Typical results otherwise.
 
 ```md
-28**************************************************
-Ready Player One (2018)
-CAM | 7.4 stars
-**************************************************
-29**************************************************
-Sherlock Gnomes (2018)
-CAM | 8.7 stars
-**************************************************
 30**************************************************
-A Wrinkle in Time (2018)
-TS | 5.3 stars
+Jumanji: Welcome to the Jungle (2017)
+
+When a young nun at a cloistered abbey in Romania
+takes her own life, a priest with a haunted past
+and a novitiate on the threshold of her final vows
+are sent by the Vatican to investigate. Together
+they uncover the order’s unholy secret. Risking
+not only their lives but their faith and their
+very souls, they confront a malevolent ...
+
+TS | 7.9 stars
 **************************************************
-Enter a number to load that movie or 0 to load next page
+Enter a number to load that movie or 0 to load next page or q to quit
 ```
 
 The only difference in both these type of results is the presence of picture
