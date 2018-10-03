@@ -17,6 +17,7 @@ import argparse
 from bs4 import BeautifulSoup as bs
 import os
 import requests
+import textwrap
 import time
 from urllib.parse import unquote, urlparse
 import webbrowser as wb
@@ -97,9 +98,14 @@ def get_curated_list(url):
             rating = i.find("div", attrs={"class": "rating"}).text.strip()
         except(AttributeError):
             rating = "Unknown rating"
+        try:
+            description = soup.find("div", attrs={"class": "texto"}).text
+        except:
+            description = "Description not found"
         print(str(count) + "*"*50)
-        print(title)
-        print(quality + " | " + rating + " stars")
+        print(title + "\n")
+        print(textwrap.fill(description, 50))
+        print("\n" + quality + " | " + rating + " stars")
         print("*"*50)
         url_list.append(i.a['href'])
         count += 1
