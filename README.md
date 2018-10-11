@@ -18,7 +18,7 @@ interface.
 This script is supposed to work on all UNIX based systems (GNU-Linux, Mac...)
 I haven't tested this on Windows.
 
-Python3 is only supported. Not tested on python2. The dependencies of this
+Python 2 and Python3 are supported. The dependencies of this
 script are
 
 * [requests](https://pypi.org/project/requests/)
@@ -27,6 +27,10 @@ script are
 
 * [youtube-dl](https://pypi.org/project/youtube_dl/)
   * This requires PhantomJS. See [here](http://phantomjs.org/download.html)
+
+To install dependencies :
+Python2 : pip install -r requirements.txt
+Python3 : pip3 install -r requirements.txt
 
 Inbuilt libraries used. Make sure these are importable.
 
@@ -125,6 +129,14 @@ All downloads happen in the directory where the script resides.
 This script has been developed and tested on python 3.7.0 running on an Arch
 Linux x86_64 machine and is expected to run on python 3.5.x and above.
 
-Incase of any issue with script, do raise an issue on the repository.
+Incase of any issue with script when running with python 3, do raise an issue on the repository.
+Incase of any issue with script running python 2 then do this:
+* Run the script using Python 3.5+
+* If it works continue using it with Python 3
+* If it doesn't then raise an issue on the repository.
+* In case you're wondering why not continue using Python 2, head [here](https://wiki.python.org/moin/Python2orPython3)
+* If you're still stubborn to continue using Python 2.x then fix it yourself.
+
+Why did [I](https://github.com/gadilashashank) include support for Python2 ? Simple answer: [I](https://github.com/gadilashashank) DIDN'T. 
 
 Thanks for using the script :)

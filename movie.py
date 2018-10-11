@@ -19,7 +19,10 @@ import os
 import requests
 import textwrap
 import time
-from urllib.parse import unquote, urlparse
+try:
+     from urllib.parse import unquote, urlparse
+except ImportError:
+     from urlparse import unquote,urlparse
 import webbrowser as wb
 import youtube_dl
 
@@ -234,7 +237,11 @@ elif args.y:
 page_number = 2
 break_count = 1
 while break_count < 5 and not args.s:
-    temp = input("Enter a number to load that movie or 0 to load next page or q to quit ")
+    try:
+        temp = raw_input("Enter a number to load that movie or 0 to load next page or q to quit ")
+    except:
+        temp = input("Enter a number to load that movie or 0 to load next page or q to quit ")
+    	
     try:
         if temp[0].upper() == "Q":
             print("Thanks for using :)")
